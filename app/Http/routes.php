@@ -29,7 +29,10 @@ Route::group(['prefix'=>'student'],function(){
 	
 });
 
-Route::controller('board','BoardController');
+Route::get('/board',[
+    'as'=>'board',
+    'uses'=>'BoardController@index'
+]);
 
 Route::group(['namespace'=>'Cool'],function(){
 	Route::get('cool', 'TestController@index');
